@@ -48,7 +48,7 @@ def homepage():
 
 @app.route("/firealarm")
 def firealarm():
-    playsound('fire_siren.mp3')
+#     playsound('fire_siren.mp3')
     return "Fire Detected"
 
 @app.route("/sms")
