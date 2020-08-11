@@ -1,6 +1,6 @@
 from flask import Flask
 from firebase import firebase
-firebase= firebase.FirebaseApplication(FIREBASE_URL,None)
+firebase= firebase.FirebaseApplication("https://sass-cb9b6.firebaseio.com/",None)
 app = Flask(__name__)
 import requests
 import geocoder
@@ -8,24 +8,28 @@ from playsound import playsound
 from flask import render_template 
 
 Att = ["Fire", "Weapon", "Intruder"]
-filefire = open('fire.txt', 'r')
-fileWeapon = open('weapon.txt', 'r')
-fileIntruder = open('intruder.txt', 'r')
+# filefire = open('fire.txt', 'r')
+# fileWeapon = open('weapon.txt', 'r')
+# fileIntruder = open('intruder.txt', 'r')
 
 @app.route('/') 
 def homepage():
 
-    result= firebase.get('/sass-cb9b6/sass','')
+#     result= firebase.get('/sass-cb9b6/sass','')
 
 # UPDATE
 # result= firebase.put('/sass-cb9b6/sass/-MENTRivnr1SqB73rmqL','fire','1')
-    print(result)
-    imgSrcFire = result['-MENTRivnr1SqB73rmqL']['fire']
-    imgSrcWeapon = result['-MENTRivnr1SqB73rmqL']['weapon']
-    imgSrcIntruder = result['-MENTRivnr1SqB73rmqL']['intruder']
-    print(result['-MENTRivnr1SqB73rmqL']['fire'])
-    print(result['-MENTRivnr1SqB73rmqL']['intruder'])
-    print(result['-MENTRivnr1SqB73rmqL']['weapon'])
+#     print(result)
+    
+    imgSrcFire = 0
+    imgSrcWeapon = 1
+    imgSrcIntruder = 1
+#     imgSrcFire = result['-MENTRivnr1SqB73rmqL']['fire']
+#     imgSrcWeapon = result['-MENTRivnr1SqB73rmqL']['weapon']
+#     imgSrcIntruder = result['-MENTRivnr1SqB73rmqL']['intruder']
+#     print(result['-MENTRivnr1SqB73rmqL']['fire'])
+#     print(result['-MENTRivnr1SqB73rmqL']['intruder'])
+#     print(result['-MENTRivnr1SqB73rmqL']['weapon'])
     Att = ["Fire", "Weapon", "Intruder"]
     # filefire = open('fire.txt', 'r')
     # imgSrcFire = filefire.read()
