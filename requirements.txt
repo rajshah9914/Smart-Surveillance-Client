@@ -1,0 +1,5 @@
+firebase==3.0.1
+geocoder==1.38.1
+Flask==1.0.2
+playsound==1.2.2
+requests==2.18.4
