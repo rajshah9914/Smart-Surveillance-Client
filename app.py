@@ -1,6 +1,6 @@
 from flask import Flask
 from firebase import firebase
-firebase= firebase.FirebaseApplication("https://sass-cb9b6.firebaseio.com/",None)
+firebase= firebase.FirebaseApplication(FIREBASE_URL,None)
 app = Flask(__name__)
 import requests
 import geocoder
