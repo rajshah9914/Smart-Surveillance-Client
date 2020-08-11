@@ -1,6 +1,6 @@
 from flask import Flask
-# from firebase import firebase
-# firebase= firebase.FirebaseApplication("https://sass-cb9b6.firebaseio.com/",None)
+from firebase import firebase
+firebase= firebase.FirebaseApplication("https://sass-cb9b6.firebaseio.com/",None)
 app = Flask(__name__)
 import requests
 import geocoder
@@ -15,21 +15,21 @@ Att = ["Fire", "Weapon", "Intruder"]
 @app.route('/') 
 def homepage():
 
-#     result= firebase.get('/sass-cb9b6/sass','')
+    result= firebase.get('/sass-cb9b6/sass','')
 
 # UPDATE
 # result= firebase.put('/sass-cb9b6/sass/-MENTRivnr1SqB73rmqL','fire','1')
 #     print(result)
     
-    imgSrcFire = 0
-    imgSrcWeapon = 1
-    imgSrcIntruder = 1
-#     imgSrcFire = result['-MENTRivnr1SqB73rmqL']['fire']
-#     imgSrcWeapon = result['-MENTRivnr1SqB73rmqL']['weapon']
-#     imgSrcIntruder = result['-MENTRivnr1SqB73rmqL']['intruder']
-#     print(result['-MENTRivnr1SqB73rmqL']['fire'])
-#     print(result['-MENTRivnr1SqB73rmqL']['intruder'])
-#     print(result['-MENTRivnr1SqB73rmqL']['weapon'])
+#     imgSrcFire = 0
+#     imgSrcWeapon = 1
+#     imgSrcIntruder = 1
+    imgSrcFire = result['-MENTRivnr1SqB73rmqL']['fire']
+    imgSrcWeapon = result['-MENTRivnr1SqB73rmqL']['weapon']
+    imgSrcIntruder = result['-MENTRivnr1SqB73rmqL']['intruder']
+    print(result['-MENTRivnr1SqB73rmqL']['fire'])
+    print(result['-MENTRivnr1SqB73rmqL']['intruder'])
+    print(result['-MENTRivnr1SqB73rmqL']['weapon'])
     Att = ["Fire", "Weapon", "Intruder"]
     # filefire = open('fire.txt', 'r')
     # imgSrcFire = filefire.read()
