@@ -1,5 +1,5 @@
 from flask import Flask
-from firebase import firebase
+# from firebase import firebase
 # firebase= firebase.FirebaseApplication("https://sass-cb9b6.firebaseio.com/",None)
 app = Flask(__name__)
 import requests
